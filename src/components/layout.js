@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import { Seo } from './seo';
 
+import Navbar from './navbar';
 import '../styles/global.css';
-import { header, content } from '../styles/layout.module.css';
+
 export default function Layout({
   children,
   title = false,
@@ -23,16 +24,18 @@ export default function Layout({
   const meta = data?.site?.siteMetadata ?? {};
   return (
     <>
-      <Seo title={title} description={description} image={image} path={path} />
-      <header className={header}>
-        <Link to="/">{meta.title}</Link>
-        <nav>
-          <Link to="/profile">Profile</Link>
-          <Link to="/blogs">Blogs</Link>
-          <Link to="/projects">Projects</Link>
-        </nav>
-      </header>
-      <main className={content}>{children}</main>
+      <div>
+        <Seo
+          title={title}
+          description={description}
+          image={image}
+          path={path}
+        />
+        <header>
+          <Navbar title={meta.title} />
+        </header>
+        <main>{children}</main>
+      </div>
     </>
   );
 }

@@ -1,29 +1,38 @@
 :root {
-  --black: #333;
-  --gray: #555;
-  --white: #fff;
+  --black: #171321;
+  --white: #f7f8fa;
+  --color1: #4281a4;
+  --color2: #48a9a6;
+  --color3: #e4dfda;
+  --color4: #d4b483;
+  --color5: #c1666b;
+  --fonfam: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
-* {
+/* generic styles */
+html {
   box-sizing: border-box;
-  margin: 0;
 }
-html,
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
-  color: var(--gray);
-  /* System Fonts as used by GitHub */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: var(--white);
+  color: var(--black);
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: var(--fonfam);
   font-size: 18px;
-  line-height: 1.4;
-}
-body {
+  outline: 0;
+  padding: 0;
   margin: 0;
 }
 h1,
 h2,
-h3,
-h4,
-h5 {
-  color: var(--black);
+h3 {
+  margin: 0;
 }
